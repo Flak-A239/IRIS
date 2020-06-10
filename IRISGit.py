@@ -4,12 +4,6 @@ user = os.getlogin()
 import json
 import datetime
 
-#change this section if you don't use firefox
-import webbrowser
-firefoxPath = 'C:\\Program Files\\Mozilla Firefox\\firefox.exe'
-webbrowser.register('firefox', None, webbrowser.BackgroundBrowser(firefoxPath))
-webbrowser = webbrowser.get('firefox')
-
 #for windows 10, you will need these packages installed in your machine for IRIS to run correctly
 os.system('pip install python requests wolframalpha pywin32 pyaudio wikipedia SpeechRecognition pyttsx3')
 
@@ -136,7 +130,7 @@ def search(x):
 
                 elif 'open' in response:
                     x.replace(' ', '+')
-                    webbrowser.open('https://www.google.com/search?q=' + x)
+                    os.startfile('https://www.google.com/search?q=' + x)
 
                 else:
                     speak('Very well.')
@@ -154,11 +148,11 @@ def search(x):
                     x = x.replace(' ', '_')
 
                     if 'Norwegian' in response:
-                        webbrowser.open('https://no.wikipedia.org/wiki/' + x)
+                        os.startfile('https://no.wikipedia.org/wiki/' + x)
                         __name__ = "__main__"
 
                     if 'English' in response:
-                        webbrowser.open('https://en.wikipedia.org/wiki/' + x)
+                        os.startfile('https://en.wikipedia.org/wiki/' + x)
                         __name__ = "__main__"
 
                 else:
@@ -191,18 +185,18 @@ def search(x):
 
                     elif 'open' in response:
                         x.replace(' ', '+')
-                        webbrowser.open('https://www.google.com/search?q=' + x)
+                        os.startfile('https://www.google.com/search?q=' + x)
 
                 if 'wiki' in response:
                     x.replace(' ', '_')
-                    webbrowser.open('https://en.wikipedia.org/wiki/' + x)
+                    os.startfile('https://en.wikipedia.org/wiki/' + x)
 
             if response in negate:
                 speak('Very well.')
                 __name__ = "__main__"
 
         except:
-            webbrowser.open(x)
+            os.startfile(x)
             speak("I'm sorry sir, I can't find anything on that topic.")
 
 if __name__ == "__main__":
@@ -221,23 +215,23 @@ if __name__ == "__main__":
             search(query)
 
         elif 'youtube' in query:
-            webbrowser.open("youtube.com")
+            os.startfile("https://youtube.com")
             __name__ = "__main__"
 
         elif 'google' in query:
-            webbrowser.open("google.com")
+            os.startfile("https://google.com")
             __name__ = "__main__"
 
         elif 'github' in query:
-            webbrowser.open("github.com")
+            os.startfile("https://github.com")
             __name__ = "__main__"
 
         elif 'wikipedia' in query:
-            webbrowser.open('wikipedia.com')
+            os.startfile('https://wikipedia.com')
             __name__ = "__main__"
 
         elif 'gmail' in query:
-            webbrowser.open('gmail.com')
+            os.startfile('https://gmail.com')
             __name__ = "__main__"
 
         #local commands
