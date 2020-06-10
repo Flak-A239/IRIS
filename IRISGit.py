@@ -134,7 +134,7 @@ def search(x):
 
                 else:
                     speak('Very well.')
-                    __name__ = "__main__"
+                    __name__ == "__main__"
 
             if not googleResult:
                 speak("I didn't find anything on Google. Here's what was on Wikipedia.")
@@ -149,15 +149,15 @@ def search(x):
 
                     if 'Norwegian' in response:
                         os.startfile('https://no.wikipedia.org/wiki/' + x)
-                        __name__ = "__main__"
+                        __name__ == "__main__"
 
                     if 'English' in response:
                         os.startfile('https://en.wikipedia.org/wiki/' + x)
-                        __name__ = "__main__"
+                        __name__ == "__main__"
 
                 else:
                     speak('Very well.')
-                    __name__ = "__main__"
+                    __name__ == "__main__"
 
             speak("Here's what I found on Google and Wikipedia.")
             print('Google:\n' + googleResult + '\n\nWikipedia:\n' + wikiResult)
@@ -193,7 +193,7 @@ def search(x):
 
             if response in negate:
                 speak('Very well.')
-                __name__ = "__main__"
+                __name__ == "__main__"
 
         except:
             os.startfile(x)
@@ -216,23 +216,23 @@ if __name__ == "__main__":
 
         elif 'youtube' in query:
             os.startfile("https://youtube.com")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'google' in query:
             os.startfile("https://google.com")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'github' in query:
             os.startfile("https://github.com")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'wikipedia' in query:
             os.startfile('https://wikipedia.com')
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'gmail' in query:
             os.startfile('https://gmail.com')
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         #local commands
         elif 'guild wars' in query:
@@ -248,39 +248,39 @@ if __name__ == "__main__":
 
         elif 'i love you' in query:
             speak('Aw thanks, if I was capable of producing serotonin at the sight of a human, I am sure it would be you.')
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'how are you' in query:
             speak("I'm well. Thank you for asking. How are you?")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif "what's up" in query:
             speak('That would be the atmosphere.')
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif "how goes it" in query:
             speak("It goes well, thank you.")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif query == 'is the world going to end':
             speak('Yes, eventually.')
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif query in code:
             try:
                 codePath = "C:\\Users\\" + user + "\\OneDrive\\Documents\\code"
                 os.startfile(codePath)
-                __name__ = "__main__"
+                __name__ == "__main__"
 
             except:
                 os.mkdir(codePath)
                 os.startfile(codePath)
-                __name__ = "__main__"
+                __name__ == "__main__"
 
         elif query in iris:
             cwd = os.getcwd()
@@ -288,11 +288,11 @@ if __name__ == "__main__":
 
         elif 'make me laugh' in query:
             speak("No.")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif 'tell me a joke' in query:
             speak("Have you heard of the AI that can take off all of your clothes and give you a whole new outfit? I've seen it change people.")
-            __name__ = "__main__"
+            __name__ == "__main__"
 
         elif query in quit:
             speak("Farewell")
